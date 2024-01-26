@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta property="og:title" content="BeanCentral">
+  <meta property="og:url" content="https://bean55tik.github.io/Bean-Central.Bean.Main/HomePage/index.html">
+  <meta property="og:description" content="BeanCentral is a place to get ipa files, p12 certificates, and you can install your ipa file with our ipa signer">
+  <meta property="og:image" content="https://bean55tik.github.io/Bean-Central.Bean.Main/Images/beancentral-high-resolution-logo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../HomePage/style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+  <script src="https://kit.fontawesome.com/a9e4513620.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="../Images/mug-hot-solid.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <title>BeanCentral</title>
+</head>
+<body>
+  <div class="main">
+    <div class="navbar">
+      <a class="burger"><i class="fa-solid fa-bars"></i></a>
+      <div class="icon">
+        <h2 class="title">BeanCentral <i id="logo" class="fa-solid fa-mug-hot"></i></h2>
+        <img src="/Images/mug-hot-solid.png" alt="" class="img">
+      </div>
+      <ul class="dropdown">
+        <li><a href="../HomePage/index.html">HOME <i class="fa-solid fa-house"></i></a></li>
+        <li><a href="../Discord/index.html">DISCORD <i class="fa-brands fa-discord"></i></a></li>
+        <li><a href="../Certificates/index.html">CERTIFICATES <i class="fa-solid fa-certificate"></i></a></li>
+        <li><a href="../IPA files/index.html">IPA FILES <i class="fa-solid fa-file-archive"></i></a></li>
+      </ul>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const fileInputs = document.querySelectorAll('.custom-file-input');
+  
+          fileInputs.forEach(function (input) {
+              input.addEventListener('change', function () {
+                  const maxFileNameLength = 15;
+                  const fileName = this.files[0].name;
+                  let displayedFileName = fileName.length <= maxFileNameLength
+                      ? fileName
+                      : fileName.substring(0, maxFileNameLength) + '...';
+  
+                  const label = this.previousElementSibling; // Get the previous element, which is the label
+                  label.textContent = displayedFileName;
+              });
+          });
+      });
+  </script>
+  <center>
+   <div class="centersign" style="padding-top: 86;">
+   <center>
+    <form method="post" action="https://api.casp.dev/upload.php" enctype="multipart/form-data" id="uploadForm" name="uploadForm">
+      <label>3 GB file limit</label>
+      <label for="p12" class="custom-file-label">
+         <span class="p12"><i class="material-symbols-outlined" style="float: left;">Input</i> .P12 File</span>
+      </label>
+      <input type="file" id="p12" name="p12" accept=".p12" class="custom-file-input" required="">
+      <label for="mobileprovision" class="custom-file-label">
+        <span class="mobile"><i class="material-symbols-outlined" style="float: left;">Input</i> .MobileProvision File</span>
+      </label>
+      <input type="file" id="mobileprovision" name="mobileprovision" accept=".mobileprovision" class="custom-file-input" required="">
+      <label for="ipa" class="custom-file-label">
+        <span class="ipa"><i class="material-symbols-outlined" style="float: left;">Input</i> .IPA File</span>
+      </label>
+      <input type="file" id="ipa" name="ipa" accept=".ipa" required="" class="custom-file-input">
+      <label for="pass" class="p12passlabel">Password of the certificate</label>
+      <input type="text" id="pass" name="pass" placeholder="Example: AppleP12.com" class="p12passinput">
+      <label class="d"> Powered by EonHub API</label>
+      <label class="dd"> Use Dns Method for AntiRevoke</label>
+      <p class="ddd">Join eonhub by going to my <br>discord page and under mutual <br>servers</p>
+      <input type="submit" class="button" value="SIGN">
+    </form>
+   </brservers<>
+   </div>
+  </center>
+  <script src="../HomePage/main.js"></script>
+</body>
+</html>
